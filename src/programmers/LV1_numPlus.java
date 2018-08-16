@@ -1,7 +1,5 @@
 package programmers;
 
-import java.util.Arrays;
-
 public class LV1_numPlus {
 
 	public static void main(String[] args) {
