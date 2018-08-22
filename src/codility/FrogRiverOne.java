@@ -1,18 +1,16 @@
 package codility;
 
-import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.stream.IntStream;
 
 public class FrogRiverOne {
 
 	public static void main(String[] args) {
-		//int[] A = {1,3,1,4,2,3,5,4};	//6
-		//int B = 5;
+		int[] A = {1,3,1,4,2,3,5,4};	//6
+		int B = 5;
 		//int B = 2;
 		//int[] A = {2, 2, 2, 2, 2}; // -1
-		int B = 3;
-		int[] A = {1, 3, 1, 3, 2, 1, 3};	//4
+		//int B = 3;
+		//int[] A = {1, 3, 1, 3, 2, 1, 3};	//4
 		//int B = 1;
 		//int[] A = {1};	//0
 		System.out.println(solution(B, A));
@@ -21,18 +19,21 @@ public class FrogRiverOne {
 
 	private static int solution(int X, int[] A) {
 		int nRet = -1;
+		int nSum = 0;
+		int[] alTemp = new int[X];
+		Arrays.fill(alTemp, 0);
 		
-		/*for (int i = 1; i <= X; i++) {
+		for (int i = 0; i < A.length; i++) {
+			if(alTemp[A[i]-1]==0) {
+				alTemp[A[i]-1]++;
+	            nSum=nSum+A[i];
+	        }
 			
-			
-			if( nTemp == -1) {
-				return -1;
+			if(i>=(X-1)) {
+				if(nSum == (X*(X+1)/2))
+					return i;
 			}
-			if(nTemp > nRet) {
-				nRet = nTemp;
-			}
-		}*/
-		
+		}
 		return nRet;
 	}
 	
@@ -43,6 +44,9 @@ public class FrogRiverOne {
 		for (int i = 0; i < A.length; i++) {
         	alOrigin.add(A[i]);
 		}
+		
+		//OR
+		//List<Integer> alOrigin =Arrays.stream(A).boxed().collect(Collectors.toList());
 		
 		for (int i = 1; i <= X; i++) {
 			int nTemp = alOrigin.indexOf(i);
