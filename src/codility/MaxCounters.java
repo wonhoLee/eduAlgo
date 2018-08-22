@@ -12,20 +12,29 @@ public class MaxCounters {
 
 	private static int[] solution(int N, int[] A) {
         int[] nRet = new int[N];
-        int nMax = 0;
+        int nCurMax = 0;
+        int nNextMax = 0;
         Arrays.fill(nRet, 0);
 
         for (int i = 0; i < A.length; i++) {
 			if(A[i] == (N + 1)) {
-				Arrays.fill(nRet, nMax);
+				nCurMax = nNextMax;
 			}else {
-				nRet[A[i] - 1] = nRet[A[i] - 1] + 1;
-				if(nMax < nRet[A[i] - 1]) {
-					nMax = nRet[A[i] - 1];
+				if(nRet[A[i] - 1] < nCurMax) {
+					nRet[A[i] - 1] = nCurMax;
+				}
+				nRet[A[i] - 1]++;
+				if(nNextMax < nRet[A[i] - 1]) {
+					nNextMax = nRet[A[i] - 1];
 				}
 			}
 		}
         
+        for (int i = 0; i < nRet.length; i++) {
+			if(nRet[i] < nCurMax) {
+				nRet[i] = nCurMax;
+			}
+		}
         return nRet;
     }
 	
