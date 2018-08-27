@@ -18,8 +18,10 @@ public class medium_CountTriplets {
 
 	private static long countTriplets(List<Long> arr, long r) {
 		long nRet = 0;
-		
-		
+		List<Long> alTemp = new ArrayList<>();
+		for (int i = 0; i < arr.size(); i++) {
+			alTemp.set(i, arr.get(0) / r);
+		}
 		
 		return nRet;
     }
