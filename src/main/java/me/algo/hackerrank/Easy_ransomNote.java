@@ -1,6 +1,6 @@
 package me.algo.hackerrank;
 
-public class easy_ransomNote {
+public class Easy_ransomNote {
 
 	public static void main(String[] args) {
 		//String[] magazine = {"give", "me", "one", "grand", "today", "night"};

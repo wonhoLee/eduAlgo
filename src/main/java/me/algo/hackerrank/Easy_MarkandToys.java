@@ -2,7 +2,7 @@ package me.algo.hackerrank;
 
 import java.util.Arrays;
 
-public class easy_MarkandToys {
+public class Easy_MarkandToys {
 
 	public static void main(String[] args) {
 		int[] A = {1,2,3,4};

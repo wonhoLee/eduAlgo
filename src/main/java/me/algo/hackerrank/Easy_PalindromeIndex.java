@@ -1,6 +1,6 @@
 package me.algo.hackerrank;
 
-public class easy_PalindromeIndex {
+public class Easy_PalindromeIndex {
 
 	public static void main(String[] args) {
 		String s = "aaab";

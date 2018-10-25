@@ -1,6 +1,6 @@
 package me.algo.algo;
 
-public class gcdlcm {
+public class Gcdlcm {
 
 	public static void main(String[] args) {
 		System.out.println(lcm(2, 6));

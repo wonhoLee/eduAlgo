@@ -1,6 +1,6 @@
 package me.algo.hackerrank;
 
-public class easy_TwoStrings {
+public class Easy_TwoStrings {
 
 	public static void main(String[] args) {
 		String s1 = "hello";

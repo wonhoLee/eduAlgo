@@ -2,7 +2,7 @@ package me.algo.algo;
 
 import java.util.Arrays;
 
-public class mergeSort {
+public class MergeSort {
 
 	public static void main(String[] args) {
 		//�Ȱ����� ������ ��α�

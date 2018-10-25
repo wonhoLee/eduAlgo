@@ -1,6 +1,6 @@
 package me.algo.hackerrank;
 
-public class medium_MinimumSwaps2 {
+public class Medium_MinimumSwaps2 {
 
 	public static void main(String[] args) {
 		//int[] arr = {4,3,1,2};	//3

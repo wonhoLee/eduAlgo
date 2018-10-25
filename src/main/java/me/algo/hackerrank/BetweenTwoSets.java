@@ -1,6 +1,6 @@
 package me.algo.hackerrank;
 
-public class betweenTwoSets {
+public class BetweenTwoSets {
 
 	public static void main(String[] args) {
 		int[] a = {2, 4};

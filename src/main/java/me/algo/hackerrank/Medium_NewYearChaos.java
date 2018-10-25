@@ -1,6 +1,6 @@
 package me.algo.hackerrank;
 
-public class medium_NewYearChaos {
+public class Medium_NewYearChaos {
 
 	public static void main(String[] args) {
 		//int[] q = {2,1,5,3,4};		//3

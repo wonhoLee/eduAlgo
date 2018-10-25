@@ -1,6 +1,6 @@
 package me.algo.hackerrank;
 
-public class easy_BubbleSort {
+public class Easy_BubbleSort {
 
 	public static void main(String[] args) {
 		//int[] a = {3, 2, 1};

@@ -2,7 +2,7 @@ package me.algo.hackerrank;
 
 import java.util.Arrays;
 
-public class medium_SherlockandAnagrams {
+public class Medium_SherlockandAnagrams {
 
 	public static void main(String[] args) {
 		String s = "abba";		//4

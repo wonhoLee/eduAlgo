@@ -3,7 +3,7 @@ package me.algo.hackerrank;
 import java.util.Arrays;
 import java.util.Comparator;
 
-public class medium_Comparator {
+public class Medium_Comparator {
 
 	public static void main(String[] args) {
 		/*int n = 5;

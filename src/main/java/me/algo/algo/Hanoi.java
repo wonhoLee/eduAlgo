@@ -1,6 +1,6 @@
 package me.algo.algo;
 
-public class hanoi {
+public class Hanoi {
 
 	public static void main(String[] args) {
 		hanoi(2, 1, 2, 3);

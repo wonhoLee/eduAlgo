@@ -1,6 +1,6 @@
 package me.algo.hackerrank;
 
-public class easy_2dArray_DS {
+public class Easy_2dArray_DS {
 
 	public static void main(String[] args) {
 		//int[][] arr = {{1,1,1,0,0,0}, {0,1,0,0,0,0},{1,1,1,0,0,0},{0,0,0,0,0,0},{0,0,0,0,0,0},{0,0,0,0,0,0}};

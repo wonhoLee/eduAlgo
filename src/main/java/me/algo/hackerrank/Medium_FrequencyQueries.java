@@ -7,7 +7,7 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.stream.Collectors;
 
-public class medium_FrequencyQueries {
+public class Medium_FrequencyQueries {
 
 	public static void main(String[] args) {
 		//int[][] nTemp = {{1, 5},{1, 6},{3, 2},{1, 10},{1, 10},{1, 6},{2, 5},{3, 2}};	// 0, 1

@@ -2,7 +2,7 @@ package me.algo.algo;
 
 import java.util.Arrays;
 
-public class bubblesort {
+public class Bubblesort {
 
 	public static void main(String[] args) {
 		int[] A = {9, 5, 7, 3, 2, 7, 3, 1, 10, 8};

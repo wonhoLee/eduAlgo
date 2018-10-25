@@ -2,7 +2,7 @@ package me.algo.hackerrank;
 
 import java.util.Arrays;
 
-public class hard_ArrayManipulation {
+public class Hard_ArrayManipulation {
 
 	public static void main(String[] args) {
 		int n = 5;

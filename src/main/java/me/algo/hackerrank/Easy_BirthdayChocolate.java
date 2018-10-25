@@ -3,7 +3,7 @@ package me.algo.hackerrank;
 import java.util.ArrayList;
 import java.util.List;
 
-public class easy_BirthdayChocolate {
+public class Easy_BirthdayChocolate {
 
 	public static void main(String[] args) {
 		List<Integer> nTarget = new ArrayList<>();

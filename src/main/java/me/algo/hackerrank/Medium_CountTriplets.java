@@ -3,7 +3,7 @@ package me.algo.hackerrank;
 import java.util.ArrayList;
 import java.util.List;
 
-public class medium_CountTriplets {
+public class Medium_CountTriplets {
 
 	public static void main(String[] args) {
 		List<Long> arr = new ArrayList<>();
