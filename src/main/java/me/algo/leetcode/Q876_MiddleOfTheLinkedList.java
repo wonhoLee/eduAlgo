@@ -10,24 +10,41 @@ public class Q876_MiddleOfTheLinkedList {
 		ListNode(int x) { val = x; }
 	}
 	
+	
+//	public ListNode middleNode(ListNode head) {
+//		ListNode retNode = head;
+//		ListNode travelNode = head;
+//		int nodeCnt = 0;
+//		while(travelNode != null) {
+//			nodeCnt++;
+//			travelNode = travelNode.next;
+//		}
+//		
+//		int target = nodeCnt / 2;
+//		for (int i = 0; i < target; i++) {
+//			retNode = retNode.next;
+//		}
+//		
+//		return retNode;
+//    }
+	
+	/*
+	 * 워커 러너 테크닉
+	 * walker : 한번에 한칸
+	 * runner : 한번에 두칸
+	 * runner 가 끝나면 walker는 중간에 와있음
+	 */
 	public ListNode middleNode(ListNode head) {
-		ListNode retNode = head;
-		int nodeCnt = 0;
-		traversal(head, nodeCnt);
+		ListNode walker = head;
+		ListNode runner = head;
 		
-		int target = nodeCnt / 2;
-		for (int i = 0; i < target; i++) {
-			retNode = retNode.next;
+		while(runner != null&&runner.next != null) {
+			walker = walker.next;
+			runner = runner.next.next;
 		}
 		
-		return retNode;
+		return walker;
     }
-	
-	public void traversal(ListNode self, int cnt) {
-		if(self == null) return;
-		cnt++;
-		traversal(self.next, cnt);
-	}
 	
 	public static void main(String[] args) {
 		Q876_MiddleOfTheLinkedList sample = new Q876_MiddleOfTheLinkedList();
