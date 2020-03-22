@@ -1,9 +1,5 @@
 package me.algo.leetcode;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-
 public class Q230_KthSmallestElementInABST {
 	/*
 	 * in : left self right
