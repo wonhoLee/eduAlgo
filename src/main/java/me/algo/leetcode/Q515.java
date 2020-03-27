@@ -11,23 +11,16 @@ public class Q515 {
         if(root == null) return ret;
 
         Queue<TreeNode> q = new LinkedList<>();
-        q.add(root);
+        q.offer(root);
 
         while(!q.isEmpty()){
             int size = q.size();
-            List<Integer> level = new ArrayList<>();
+            int tmp = Integer.MIN_VALUE;
             for(int i=0 ; i < size; i++){
                 TreeNode node = q.poll();
-                level.add(node.val);
-                if(node.left !=null) q.add(node.left);
-                if(node.right !=null) q.add(node.right);
-            }
-
-            Integer tmp = level.get(0);
-            for(Integer val : level){
-                if(tmp < val){
-                    tmp = val;
-                }
+                if(tmp > node.val) tmp = node.val;
+                if(node.left !=null) q.offer(node.left);
+                if(node.right !=null) q.offer(node.right);
             }
             ret.add(tmp);
         }
