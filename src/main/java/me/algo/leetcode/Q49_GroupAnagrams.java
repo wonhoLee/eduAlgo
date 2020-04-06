@@ -7,11 +7,11 @@ import java.util.List;
 
 
 //Q49
-public class GroupAnagrams {
+public class Q49_GroupAnagrams {
     public static void main(String[] args) {
         String[] strs = {"eat", "tea", "tan", "ate", "nat", "bat"};
-        GroupAnagrams groupAnagrams = new GroupAnagrams();
-        System.out.println(groupAnagrams.groupAnagrams(strs));
+        Q49_GroupAnagrams q49GroupAnagrams = new Q49_GroupAnagrams();
+        System.out.println(q49GroupAnagrams.groupAnagrams(strs));
     }
 
     public List<List<String>> groupAnagrams(String[] strs) {

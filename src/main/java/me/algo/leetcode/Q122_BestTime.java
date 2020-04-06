@@ -1,12 +1,12 @@
 package me.algo.leetcode;
 
 //Q122
-public class BestTime {
+public class Q122_BestTime {
     public static void main(String[] args) {
         int[] prices = {7, 1, 5, 3, 6, 4};
 
-        BestTime bestTime = new BestTime();
-        System.out.println(bestTime.maxProfit(prices));
+        Q122_BestTime q122BestTime = new Q122_BestTime();
+        System.out.println(q122BestTime.maxProfit(prices));
     }
 
     public int maxProfit(int[] prices) {

@@ -6,15 +6,15 @@ import java.util.List;
 
 //https://leetcode.com/problems/move-zeroes/
 //Q283
-public class MoveZeroe {
+public class Q283_MoveZeroe {
     public static void main(String[] args) {
         int[] nums = {0, 1, 0, 3, 12};
 //        int[] nums = {0, 0, 1};
-        MoveZeroe moveZeroe = new MoveZeroe();
-        moveZeroe.moveZeroes(nums);
-        moveZeroe.meveZeros1(nums);
-        moveZeroe.moveZeroes2(nums);
-        moveZeroe.moveZeroes3(nums);
+        Q283_MoveZeroe q283MoveZeroe = new Q283_MoveZeroe();
+        q283MoveZeroe.moveZeroes(nums);
+        q283MoveZeroe.meveZeros1(nums);
+        q283MoveZeroe.moveZeroes2(nums);
+        q283MoveZeroe.moveZeroes3(nums);
 
     }
 

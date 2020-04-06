@@ -2,13 +2,13 @@ package me.algo.leetcode;
 
 
 // Q202
-public class HappyNumber {
+public class Q202_HappyNumber {
     int nCnt = 0;
 
     public static void main(String[] args) {
         int num = 18;
-        HappyNumber happyNumber = new HappyNumber();
-        System.out.println(happyNumber.checkHappyNumber(num));
+        Q202_HappyNumber q202HappyNumber = new Q202_HappyNumber();
+        System.out.println(q202HappyNumber.checkHappyNumber(num));
     }
 
     public boolean checkHappyNumber(int num) {
