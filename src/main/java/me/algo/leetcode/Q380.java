@@ -35,6 +35,7 @@ public class Q380 {
         if (hashMap.containsKey(val)) return false;
         hashMap.put(val, size++);
         list.add(val);
+        return true;
     }
 
     /**
