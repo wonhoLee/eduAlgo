@@ -1,4 +1,4 @@
-package me.algo.leetcode;
+package me.algo.leetcode.recursion;
 
 import java.util.Arrays;
 
