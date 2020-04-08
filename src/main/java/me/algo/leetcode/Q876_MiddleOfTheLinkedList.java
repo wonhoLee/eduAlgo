@@ -27,7 +27,22 @@ public class Q876_MiddleOfTheLinkedList {
 //		
 //		return retNode;
 //    }
-	
+
+	/*
+	public ListNode middleNode(ListNode head) {
+        if(head == null) return head;
+        List<ListNode> list = new ArrayList<>();
+        list.add(head);
+
+        while(head.next != null){
+            list.add(head.next);
+            head = head.next;
+        }
+
+        return list.get(list.size() / 2);
+    }
+	 */
+
 	/*
 	 * 워커 러너 테크닉
 	 * walker : 한번에 한칸
