@@ -32,7 +32,7 @@ public class LV1_mara {
 		
 		return answer;
     }
-	
+
 	//case2 : 완료 - Hash 문제이지만 hash 를 사용하지 않음
 	/*public static String solution(String[] participant, String[] completion) {
         Arrays.sort(participant);
