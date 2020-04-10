@@ -1,7 +1,5 @@
 package me.algo.leetcode;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Stack;
 
 public class Q844_Backspace {
