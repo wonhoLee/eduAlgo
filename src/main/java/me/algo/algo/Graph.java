@@ -24,7 +24,6 @@ public class Graph {
 	}
 	Node[] nodes;
 	public Graph(int size) {
-		super();
 		nodes = new Node[size];
 		for (int i = 0; i < nodes.length; i++) {
 			nodes[i] = new Node(i);
@@ -115,8 +114,8 @@ public class Graph {
 		g.addEdge(5, 6);
 		g.addEdge(5, 7);
 		g.addEdge(6, 8);
-		//g.dfs();
+		g.dfs();
 		//g.bfs();
-		g.dfsR();
+//		g.dfsR();
 	}
 }
