@@ -1,4 +1,4 @@
-package me.algo.algo;
+package me.algo.structure.graph;
 
 import java.util.LinkedList;
 import java.util.List;

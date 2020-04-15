@@ -1,8 +1,11 @@
-package me.algo.algo;
+package me.algo.structure.graph;
+
+import me.algo.algo.Queue;
 
 import java.util.LinkedList;
 import java.util.Stack;
 
+//https://www.youtube.com/watch?v=_hxFgg7TLZQ&t=574s
 public class Graph {
 /*
  * DFS : Depth First Search
@@ -16,7 +19,6 @@ public class Graph {
 		LinkedList<Node> adjacent;
 		boolean marked;
 		public Node(int data) {
-			super();
 			this.data = data;
 			this.marked = false;
 			this.adjacent = new LinkedList<>();
