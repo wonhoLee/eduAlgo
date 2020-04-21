@@ -1,4 +1,4 @@
-package me.algo.algo;
+package me.algo.structure.tree;
 
 // Java implementation of search and insert operations
 // on Trie
