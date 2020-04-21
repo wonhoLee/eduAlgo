@@ -1,4 +1,4 @@
-package me.algo.programmers;
+package me.algo.programmers.sort;
 
 import java.util.*;
 
