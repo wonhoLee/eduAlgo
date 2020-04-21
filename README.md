@@ -37,3 +37,10 @@
   - Queue
   - Left -> Right, Top -> Bottom
   - 최단경로, 미로찾기 알고리즘
+
+## Tree
+### 3가지 순회방법
+- https://www.youtube.com/watch?v=QN1rZYX6QaA
+- inorder : left, root, right
+- Preorder : root, left, right
+- postorder : left, right, root
