@@ -1,11 +1,11 @@
 package me.algo.programmers.sort;
 
 import java.util.Arrays;
-import java.util.Comparator;
 
 public class LargestNum {
     public static void main(String[] args) {
-        int[] numbers = {6, 10, 2};
+//        int[] numbers = {6, 10, 2};
+        int[] numbers = {3, 30, 34, 5, 9};
         LargestNum largestNum = new LargestNum();
         System.out.println(largestNum.solution(numbers));
     }
@@ -18,15 +18,13 @@ public class LargestNum {
             strings[i] = String.valueOf(numbers[i]);
         }
 
-        Arrays.sort(strings, new Comparator<String>(){
-            @Override
-            public int compare(String o1, String o2) {
-                return 0;
-            }
-        });
-//        Arrays.sort(strings);
+        Arrays.sort(strings, (o1, o2) -> (o2 + o1).compareTo(o1 + o2));
 
-        System.out.println(Arrays.toString(numbers));
+        for (String str : strings) {
+            answer += str;
+        }
+
+        if ("0".equals(answer.substring(0, 1))) return "0";
 
         return answer;
     }
