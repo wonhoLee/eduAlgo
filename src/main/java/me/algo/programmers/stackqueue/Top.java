@@ -1,4 +1,4 @@
-package me.algo.programmers;
+package me.algo.programmers.stackqueue;
 
 import java.util.Arrays;
 import java.util.Stack;
@@ -34,5 +34,30 @@ public class Top {
 
         return answer;
     }
+
+    /*
+    public int[] solution(int[] heights) {
+        Stack<Integer> s = new Stack<>();
+        int[] answer = new int[heights.length];
+        Arrays.fill(answer, 0);
+
+        for (int val : heights) {
+            s.push(val);
+        }
+
+        while (!s.empty()) {
+            int idx = s.size() - 1;
+            int cur = s.pop();
+            for (int i = idx - 1; i >= 0; i--) {
+                if (heights[i] > cur) {
+                    answer[idx] = i + 1;
+                    break;
+                }
+            }
+        }
+
+        return answer;
+    }
+     */
 }
 
