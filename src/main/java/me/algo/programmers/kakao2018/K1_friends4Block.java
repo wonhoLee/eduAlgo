@@ -1,4 +1,4 @@
-package me.algo.programmers;
+package me.algo.programmers.kakao2018;
 
 import java.util.Arrays;
 
@@ -27,7 +27,7 @@ public class K1_friends4Block {
 		}
 		
 		while(true) {
-			int nTemp = 0;
+			int nTemp;
 			//ã�� �� ġȯ
 			nTemp = isEqual(arrBoard, m, n);
 			
@@ -39,9 +39,9 @@ public class K1_friends4Block {
 			
 			//���� �� ����
 			setArr(arrBoard);
-			
-			for (int i = 0; i < arrBoard.length; i++) {
-				System.out.println(Arrays.toString(arrBoard[i]));
+
+			for (String[] strings : arrBoard) {
+				System.out.println(Arrays.toString(strings));
 			}
 			System.out.println();
 			

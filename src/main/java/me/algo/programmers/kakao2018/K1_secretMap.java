@@ -1,4 +1,4 @@
-package me.algo.programmers;
+package me.algo.programmers.kakao2018;
 
 import java.util.Arrays;
 

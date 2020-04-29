@@ -1,8 +1,6 @@
-package me.algo.programmers;
+package me.algo.programmers.kakao2018;
 
 import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Comparator;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
@@ -26,55 +24,44 @@ public class K1_newClustring {
 		int nInter = 0;
 		int nUnion = 0;
 		Set<String> setTarget = new HashSet<>();
-		
+
 		List<String> listStr1 = getPattern(str1);
 		List<String> listStr2 = getPattern(str2);
-		Collections.sort(listStr1, new Comparator<String>(){
-			public int compare(String obj1, String obj2)
-		    {
-				return obj1.compareTo(obj2);
-		    }
-		});
-		Collections.sort(listStr2, new Comparator<String>(){
-			public int compare(String obj1, String obj2)
-		    {
-				return obj1.compareTo(obj2);
-		    }
-		});
-			
+		listStr1.sort(String::compareTo);
+		listStr2.sort(String::compareTo);
+
 		setTarget.addAll(listStr1);
 		setTarget.addAll(listStr2);
-		
+
 		List<String> listTarget = new ArrayList<>(setTarget);
-		
-		for (int i = 0; i < listTarget.size(); i++) {
-			String sTemp = listTarget.get(i);
+
+		for (String sTemp : listTarget) {
 			int str1Hit = 0;
 			int str2Hit = 0;
-			if(listStr1.contains(sTemp)) {
-				for (int j = 0; j < listStr1.size(); j++) {
-					if(sTemp.equals(listStr1.get(j))) {
+			if (listStr1.contains(sTemp)) {
+				for (String s : listStr1) {
+					if (sTemp.equals(s)) {
 						str1Hit++;
 					}
 				}
 			}
-			if(listStr2.contains(sTemp)) {
-				for (int j = 0; j < listStr2.size(); j++) {
-					if(sTemp.equals(listStr2.get(j))) {
+			if (listStr2.contains(sTemp)) {
+				for (String s : listStr2) {
+					if (sTemp.equals(s)) {
 						str2Hit++;
 					}
 				}
 			}
-			
+
 			int nTemp = Math.min(str1Hit, str2Hit);
-			if(nTemp > 0) {
+			if (nTemp > 0) {
 				for (int j = 0; j < nTemp; j++) {
 					nInter++;
 				}
 			}
-			
+
 			nTemp = Math.max(str1Hit, str2Hit);
-			if(nTemp > 0) {
+			if (nTemp > 0) {
 				for (int j = 0; j < nTemp; j++) {
 					nUnion++;
 				}
