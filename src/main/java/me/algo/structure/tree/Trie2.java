@@ -8,7 +8,7 @@ public class Trie2 {
     static class TrieNode {
         private char data;
         private boolean isLeaf;
-        private HashMap<Character, TrieNode> children;
+        private final HashMap<Character, TrieNode> children;
 
         public TrieNode(char c) {
             this.data = c;
@@ -50,5 +50,43 @@ public class Trie2 {
         }
     }
 
-    
+    static class Trie {
+        TrieNode root;
+
+        public Trie() {
+            root = new TrieNode(' ');
+        }
+
+        public void insert(String word) {
+            TrieNode current = root;
+            for (char c : word.toCharArray()) {
+                if (current.getChild(c) != null) {
+                    current = current.getChild(c);
+                } else {
+                    current = current.putChild(c);
+                }
+            }
+            current.setLeaf(true);
+        }
+
+        public ArrayList<TrieNode> findLeafs(String word) {
+            ArrayList<TrieNode> retList = new ArrayList<>();
+            TrieNode current = root;
+            for (char c : word.toCharArray()) {
+                if (current.getChild(c) != null) {
+                    current = current.getChild(c);
+                } else {
+                    retList.clear();
+                    return retList;
+                }
+            }
+
+            if (current.isLeaf()) {
+                retList.add(current);
+            }
+
+            retList.addAll(current.getAllLeaf());
+            return retList;
+        }
+    }
 }

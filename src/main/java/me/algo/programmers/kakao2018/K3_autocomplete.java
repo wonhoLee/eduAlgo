@@ -1,6 +1,8 @@
 package me.algo.programmers.kakao2018;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashMap;
 
 //https://javaplant.tistory.com/14
 public class K3_autocomplete {
@@ -11,31 +13,67 @@ public class K3_autocomplete {
         System.out.println(k3Autocomplete.solution(words));
     }
 
-    /*
-    한번입력 -> 저장
-    다음입력시 자동완성
-    앞부분이 동일한개 >1이면 다른문자 나올때까지 입력
-
-     */
     public int solution(String[] words) {
-        int answer = 0;
         Trie trie = new Trie();
-        for (String w : words) {
-            trie.insert(w);
+
+        for (String str : words) {
+            trie.insert(str);
         }
 
+        int count = 0;
+        for (String str : words) {
+            for (int i = 1; i <= str.length(); i++) {
+                count++;
+                String word = str.substring(0, i);
+                if (trie.findLeafs(word).size() == 1) {
+                    break;
+                }
+            }
+        }
 
-
-        return answer;
+        return count;
     }
 
     static class TrieNode {
-        TrieNode[] children = new TrieNode[26];
-        boolean isEndOfWord;
+        private boolean isLeaf;
+        private final HashMap<Character, TrieNode> children;
 
-        TrieNode() {
-            isEndOfWord = false;
-            Arrays.fill(children, null);
+        public TrieNode() {
+            children = new HashMap<>();
+            isLeaf = false;
+        }
+
+        public HashMap<Character, TrieNode> getChildren() {
+            return children;
+        }
+
+        public boolean isLeaf() {
+            return isLeaf;
+        }
+
+        public void setLeaf(boolean isLeaf) {
+            this.isLeaf = isLeaf;
+        }
+
+        public TrieNode putChild(char c) {
+            TrieNode temp = new TrieNode();
+            getChildren().put(c, temp);
+            return temp;
+        }
+
+        public TrieNode getChild(char c) {
+            return getChildren().get(c);
+        }
+
+        public ArrayList<TrieNode> getAllLeaf() {
+            ArrayList<TrieNode> retList = new ArrayList<>();
+            for (TrieNode child : getChildren().values()) {
+                if (child.isLeaf()) {
+                    retList.add(child);
+                }
+                retList.addAll(child.getAllLeaf());
+            }
+            return retList;
         }
     }
 
@@ -46,26 +84,36 @@ public class K3_autocomplete {
             root = new TrieNode();
         }
 
-        public void insert(String key) {
-            TrieNode node = root;
-            for (int i = 0; i < key.length(); i++) {
-                int index = key.charAt(i) - 'a';
-                if (node.children[index] == null) {
-                    node.children[index] = new TrieNode();
+        public void insert(String word) {
+            TrieNode current = root;
+            for (char c : word.toCharArray()) {
+                if (current.getChild(c) != null) {
+                    current = current.getChild(c);
+                } else {
+                    current = current.putChild(c);
                 }
-                node = node.children[index];
             }
-            node.isEndOfWord = true;
+            current.setLeaf(true);
         }
 
-        public boolean search(String key) {
-            TrieNode node = root;
-            for (int i = 0; i < key.length(); i++) {
-                int index = key.charAt(i) - 'a';
-                if (node.children[index] == null) return false;
-                node = node.children[index];
+        public ArrayList<TrieNode> findLeafs(String word) {
+            ArrayList<TrieNode> retList = new ArrayList<>();
+            TrieNode current = root;
+            for (char c : word.toCharArray()) {
+                if (current.getChild(c) != null) {
+                    current = current.getChild(c);
+                } else {
+                    retList.clear();
+                    return retList;
+                }
             }
-            return (node != null && node.isEndOfWord);
+
+            if (current.isLeaf()) {
+                retList.add(current);
+            }
+
+            retList.addAll(current.getAllLeaf());
+            return retList;
         }
     }
 }
