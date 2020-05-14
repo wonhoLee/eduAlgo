@@ -1,58 +1,85 @@
 package me.algo.structure.tree;
 
 public class WonStudy {
-    Node root;
+    static final int ALPHABET_SIZE = 26;
 
-    public Node search(Node root, int key) {
-        if (root == null || root.data == key) return root;
-        if (root.data > key) {
-            return search(root.left, key);
-        } else {
-            return search(root.right, key);
+    static class TrieNode {
+        TrieNode[] children = new TrieNode[ALPHABET_SIZE];
+        boolean isEndOfWord;
+
+        TrieNode() {
+            isEndOfWord = false;
+            for (int i = 0; i < ALPHABET_SIZE; i++) {
+                children[i] = null;
+            }
         }
     }
 
-    public void insert(int data) {
-        root = insert(root, data);
+    static TrieNode root;
+
+    /**
+     * Initialize your data structure here.
+     */
+    public WonStudy() {
+        root = new TrieNode();
     }
 
-    private Node insert(Node root, int data) {
-        if (root == null) return root;
-        if (root.data > data) {
-            root.left = insert(root.left, data);
-        } else {
-            root.right = insert(root.right, data);
+    /**
+     * Inserts a word into the trie.
+     */
+    public void insert(String word) {
+        int level;
+        int length = word.length();
+        int index;
+        TrieNode node = root;
+        for (level = 0; level < length; level++) {
+            index = word.charAt(level) - 'a';
+            if (node.children[index] == null)
+                node.children[index] = new TrieNode();
+            node = node.children[index];
         }
-        return root;
+        node.isEndOfWord = true;
     }
 
-    public void delete(int data) {
-        root = delete(root, data);
-    }
-
-    private Node delete(Node root, int data) {
-        if (root == null) return root;
-        if (root.data > data) {
-            root.left = delete(root.left, data);
-        } else if (root.data < data) {
-            root.right = delete(root.right, data);
-        } else {
-            if(root.left == null && root.right == null) return null;
-            else if(root.left == null) return root.right;
-            else if(root.right == null) return  root.left;
-
-            root.data = findMin(root.right);
-            root.right = delete(root.right, root.data);
+    /**
+     * Returns if the word is in the trie.
+     */
+    public boolean search(String word) {
+        int level;
+        int length = word.length();
+        int index;
+        TrieNode node = root;
+        for (level = 0; level < length; level++) {
+            index = word.charAt(level) - 'a';
+            if (node.children[index] == null) {
+                return false;
+            }
+            node = node.children[index];
         }
-        return root;
+        return node != null && node.isEndOfWord;
     }
 
-    private int findMin(Node root) {
-        int min = root.data;
-        while (root.left != null) {
-            min = root.left.data;
-            root = root.left;
+    /**
+     * Returns if there is any word in the trie that starts with the given prefix.
+     */
+    public boolean startsWith(String prefix) {
+        int level;
+        int length = prefix.length();
+        int index;
+        TrieNode node = root;
+        for (level = 0; level < length; level++) {
+            index = prefix.charAt(level) - 'a';
+            if (node.children[index] == null) {
+                return false;
+            }
+            node = node.children[index];
         }
-        return min;
+        return node != null;
+    }
+
+    public static void main(String[] args) {
+        WonStudy wonStudy = new WonStudy();
+        wonStudy.insert("apple");
+        wonStudy.search("apple");
     }
 }
